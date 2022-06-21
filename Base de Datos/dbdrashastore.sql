@@ -184,9 +184,28 @@ CREATE TABLE `tbdetalleventa` (
 
 LOCK TABLES `tbdetalleventa` WRITE;
 /*!40000 ALTER TABLE `tbdetalleventa` DISABLE KEYS */;
-INSERT INTO `tbdetalleventa` VALUES (1,11,700.00,7700.00,'celular',9,6),(2,10,1550.00,15500.00,'televisor',10,7),(3,4,700.00,2800.00,'celular',10,6);
+INSERT INTO `tbdetalleventa` VALUES (2,2,1550.00,3100.00,'televisor',12,7),(3,13,1550.00,20150.00,'televisor',13,7);
 /*!40000 ALTER TABLE `tbdetalleventa` ENABLE KEYS */;
 UNLOCK TABLES;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `tbdetalleventa_after_insert` AFTER INSERT ON `tbdetalleventa` FOR EACH ROW BEGIN
+	UPDATE tbproducto P
+	SET P.cantidad = P.cantidad - NEW.cantidad
+	WHERE P.id_producto = NEW.id_producto;
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `tbempleado`
@@ -322,7 +341,7 @@ CREATE TABLE `tbproducto` (
 
 LOCK TABLES `tbproducto` WRITE;
 /*!40000 ALTER TABLE `tbproducto` DISABLE KEYS */;
-INSERT INTO `tbproducto` VALUES (6,'celular','a',NULL,700.0000,25,0,NULL,1,1,'P0001',_binary ''),(7,'televisor','b',NULL,1550.0000,15,0,NULL,1,1,'P0002',_binary '');
+INSERT INTO `tbproducto` VALUES (6,'celular','a',NULL,700.0000,25,0,NULL,1,1,'P0001',_binary ''),(7,'televisor','b',NULL,1550.0000,0,0,NULL,1,1,'P0002',_binary '');
 /*!40000 ALTER TABLE `tbproducto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,7 +421,7 @@ CREATE TABLE `tbventa` (
   KEY `FK_tbventa_tbcliente` (`id_cliente`),
   CONSTRAINT `FK_tbventa_tbcliente` FOREIGN KEY (`id_cliente`) REFERENCES `tbcliente` (`id_cliente`),
   CONSTRAINT `FK_tbventa_tbempleado` FOREIGN KEY (`id_empleado`) REFERENCES `tbempleado` (`id_empleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -411,7 +430,7 @@ CREATE TABLE `tbventa` (
 
 LOCK TABLES `tbventa` WRITE;
 /*!40000 ALTER TABLE `tbventa` DISABLE KEYS */;
-INSERT INTO `tbventa` VALUES (10,18300.00,'2022-06-20 21:56:14',_binary '',1,1);
+INSERT INTO `tbventa` VALUES (12,3100.00,'2022-06-21 11:35:08',_binary '',1,1),(13,20150.00,'2022-06-21 11:35:35',_binary '',1,1);
 /*!40000 ALTER TABLE `tbventa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1047,4 +1066,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-21  1:46:55
+-- Dump completed on 2022-06-21 11:42:51

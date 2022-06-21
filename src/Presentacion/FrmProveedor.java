@@ -103,7 +103,6 @@ public class FrmProveedor extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbProveedor);
 
-        txtBuscar.setEditable(false);
         txtBuscar.setBackground(new java.awt.Color(252, 252, 255));
         txtBuscar.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -214,12 +213,10 @@ public class FrmProveedor extends javax.swing.JInternalFrame {
 
         buttonGroup1.add(rbtnActivo);
         rbtnActivo.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        rbtnActivo.setForeground(new java.awt.Color(0, 0, 0));
         rbtnActivo.setText("Activo");
 
         buttonGroup1.add(rbtnInactivo);
         rbtnInactivo.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        rbtnInactivo.setForeground(new java.awt.Color(0, 0, 0));
         rbtnInactivo.setText("Inactivo");
 
         jLabel14.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -372,11 +369,12 @@ public class FrmProveedor extends javax.swing.JInternalFrame {
 
     private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
         txtBuscar.addKeyListener(new KeyAdapter() {
-            public void keyRelease(KeyEvent e) {
-                trs.setRowFilter(RowFilter.regexFilter("(?i)" + txtBuscar.getText(), 2));
+            @Override
+            public void keyReleased(KeyEvent e) {
+                trs.setRowFilter(RowFilter.regexFilter(txtBuscar.getText(), 2));
             }
-        }
-        );
+        });
+
         trs = new TableRowSorter(modelo);
         tbProveedor.setRowSorter(trs);
     }//GEN-LAST:event_txtBuscarKeyTyped

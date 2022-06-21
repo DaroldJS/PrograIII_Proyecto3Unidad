@@ -328,7 +328,6 @@ public class FrmEmpleado extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tbEmpleado);
 
-        txtBuscar.setEditable(false);
         txtBuscar.setBackground(new java.awt.Color(252, 252, 255));
         txtBuscar.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
@@ -441,14 +440,17 @@ public class FrmEmpleado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtBuscarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyTyped
+
         txtBuscar.addKeyListener(new KeyAdapter() {
-            public void keyRelease(KeyEvent e) {
-                trs.setRowFilter(RowFilter.regexFilter("(?i)" + txtBuscar.getText(), 2));
+            @Override
+            public void keyReleased(KeyEvent e) {
+                trs.setRowFilter(RowFilter.regexFilter(txtBuscar.getText(), 1));
             }
-        }
-        );
+        });
+
         trs = new TableRowSorter(modelo);
         tbEmpleado.setRowSorter(trs);
+
     }//GEN-LAST:event_txtBuscarKeyTyped
 
     private void tbEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbEmpleadoMouseClicked
@@ -457,7 +459,7 @@ public class FrmEmpleado extends javax.swing.JInternalFrame {
         btnAgregar.setEnabled(false);
         int fila = tbEmpleado.getSelectedRow();
         int id = Integer.parseInt(tbEmpleado.getValueAt(fila, 0).toString());
-        
+
         ClsNEmpleado objNemp = new ClsNEmpleado();
         ClsEEmpleado objEemp = objNemp.MtdBuscarEmpleado(id);
         txtId.setText(String.valueOf(objEemp.getId_empleado()));

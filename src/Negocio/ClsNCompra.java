@@ -4,7 +4,7 @@
  */
 package Negocio;
 
-import Entidad.ClsEVenta;
+import Entidad.ClsECompra;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,20 +14,20 @@ import java.sql.SQLException;
  *
  * @author Usuario
  */
-public class ClsNVenta {
+public class ClsNCompra {
 
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
 
-    public boolean MtdResgistrarVenta(ClsEVenta objEE) {
+    public boolean MtdResgistrarCompra(ClsECompra objEC) {
         try {
-            String sql = "CALL USP_I_AgregarVenta(?,?,?)";
+            String sql = "CALL USP_I_AgregarCompra(?,?,?)";
             con = ClsConexion.Conectar();
             ps = con.prepareCall(sql);
-            ps.setDouble(1, objEE.getTotal());
-            ps.setInt(2, objEE.getId_empleado());
-            ps.setInt(3, objEE.getId_cliente());
+            ps.setDouble(1, objEC.getTotal());
+            ps.setInt(2, objEC.getId_empleado());
+            ps.setInt(3, objEC.getId_proveedor());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -35,20 +35,20 @@ public class ClsNVenta {
         }
     }
 
-    public int MtdBuscarUltimaVenta() {
-        int id_venta = 0;
+    public int MtdBuscarUltimaCompra() {
+        int id_compra = 0;
         try {
-            String sql = "CALL USP_B_BuscarUltimaVenta";
+            String sql = "CALL USP_B_BuscarUltimaCompra";
             con = ClsConexion.Conectar();
             ps = con.prepareCall(sql);
             rs = ps.executeQuery();
             if (rs.next()) {
-                id_venta = rs.getInt("id_venta");
+                id_compra = rs.getInt("id_compra");
             }
-            return id_venta;
+            return id_compra;
         } catch (SQLException e) {
             System.out.println("error: " + e.getMessage());
-            return id_venta;
+            return id_compra;
         }
     }
 

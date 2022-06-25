@@ -90,8 +90,8 @@ public class FrmConsultarProducto extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnSeleccionar))
@@ -111,24 +111,24 @@ public class FrmConsultarProducto extends javax.swing.JInternalFrame {
             int id = Integer.parseInt(tbConsultarProducto.getValueAt(filam, 0).toString());
             ClsNProducto Npro = new ClsNProducto();
             ClsEProducto pro = Npro.MtdBuscarProducto(id);
-            FrmVenta.txtCodigoProducto.setText(pro.getCodigo());
-            FrmVenta.txtNombreProducto.setText(pro.getNombre());
-            FrmVenta.txtPrecioUnitario.setText(String.valueOf(pro.getPrecio_unitario()));
+            FrmCompra.txtCodigoProducto.setText(pro.getCodigo());
+            FrmCompra.txtNombreProducto.setText(pro.getNombre());
+            FrmCompra.txtPrecioUnitario.setText(String.valueOf(pro.getPrecio_unitario()));
 
-            int nfilas = FrmVenta.tbVenta.getRowCount();
+            int nfilas = FrmCompra.tbCompra.getRowCount();
             for (int i = 0; i < nfilas; i++) {
-                String codigo = FrmVenta.tbVenta.getValueAt(i, 0).toString();
-                if (codigo.equals(FrmVenta.txtCodigoProducto.getText())) {
-                    System.out.println(codigo + " = " + FrmVenta.txtCodigoProducto.getText());
-                    int tcantidad = Integer.parseInt(FrmVenta.tbVenta.getValueAt(i, 2).toString());
+                String cod = FrmCompra.tbCompra.getValueAt(i, 0).toString();
+                if (cod.equals(FrmCompra.txtCodigoProducto.getText())) {
+                    System.out.println(cod + " = " + FrmCompra.txtCodigoProducto.getText());
+                    int tcantidad = Integer.parseInt(FrmCompra.tbCompra.getValueAt(i, 2).toString());
                     pro.setCantidad(pro.getCantidad() - tcantidad);
                     break;
                 }
             }
-            FrmVenta.txtStock.setText(String.valueOf(pro.getCantidad()));
+            FrmCompra.txtStock.setText(String.valueOf(pro.getCantidad()));
 
-            FrmVenta.btnAgregar.setEnabled(true);
-            FrmVenta.btnQuitar.setEnabled(true);
+            FrmCompra.btnAgregar.setEnabled(true);
+            FrmCompra.btnQuitar.setEnabled(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "SELECCIONA UNA FILA");

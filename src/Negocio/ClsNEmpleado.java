@@ -37,11 +37,11 @@ public class ClsNEmpleado {
             if (rs.next()) {
                 if (objEE.getClave().equals(rs.getString("clave"))) {
                     if (rs.getBoolean("estado")) {
-                        JOptionPane.showMessageDialog(null,
-                                "Ingreso correcto usuario "
-                                + rs.getString("E.dni") + "\n"
-                                + " " + rs.getString("E.nombre")
-                                + " " + rs.getString("E.apellidos"));
+//                        JOptionPane.showMessageDialog(null,
+//                                "Ingreso correcto usuario "
+//                                + rs.getString("E.dni") + "\n"
+//                                + " " + rs.getString("E.nombre")
+//                                + " " + rs.getString("E.apellidos"));
                         FrmLogin.puente = rs.getString("E.dni");            // dni
                         FrmLogin.puente2 = rs.getString("C.nombre");        // cargo
                         FrmLogin.puente3 = rs.getString("E.nombre");        // nombre

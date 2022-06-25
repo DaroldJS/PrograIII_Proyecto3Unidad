@@ -10,13 +10,16 @@ import Negocio.ClsNCargo;
 import Negocio.ClsNEmpleado;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.beans.PropertyVetoException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -32,8 +35,11 @@ public class FrmEmpleado extends javax.swing.JInternalFrame {
     public FrmEmpleado() {
         initComponents();
         try {
+            this.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+            BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
+            bui.setNorthPane(null);
             this.setMaximum(true);
-        } catch (Exception e) {
+        } catch (PropertyVetoException e) {
         }
         MtdListarEmpleado();
         cmbCargo.removeAllItems();
@@ -433,7 +439,7 @@ public class FrmEmpleado extends javax.swing.JInternalFrame {
                     .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();

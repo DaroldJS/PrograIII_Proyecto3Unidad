@@ -4,24 +4,17 @@
  */
 package Entidad;
 
-public class ClsEDetalleVenta {
+/**
+ *
+ * @author Usuario
+ */
+public class ClsEDetalleCompra {
 
     int id_detalle;
     int cantidad;
     double subtotal;
-    ClsEVenta venta;
+    ClsECompra compra;
     ClsEProducto producto;
-
-    public ClsEDetalleVenta() {
-    }
-
-    public ClsEDetalleVenta(int id_detalle, int cantidad, double subtotal, ClsEVenta venta, ClsEProducto producto) {
-        this.id_detalle = id_detalle;
-        this.cantidad = cantidad;
-        this.subtotal = subtotal;
-        this.venta = venta;
-        this.producto = producto;
-    }
 
     public int getId_detalle() {
         return id_detalle;
@@ -47,12 +40,12 @@ public class ClsEDetalleVenta {
         this.subtotal = subtotal;
     }
 
-    public ClsEVenta getVenta() {
-        return venta;
+    public ClsECompra getCompra() {
+        return compra;
     }
 
-    public void setVenta(ClsEVenta venta) {
-        this.venta = venta;
+    public void setCompra(ClsECompra compra) {
+        this.compra = compra;
     }
 
     public ClsEProducto getProducto() {

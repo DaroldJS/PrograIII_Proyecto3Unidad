@@ -4,28 +4,22 @@
  */
 package Presentacion;
 
-import Entidad.ClsECliente;
-import Negocio.ClsNCliente;
+import Entidad.ClsEProveedor;
+import Negocio.ClsNProveedor;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
  * @author Usuario
  */
-public class FrmConsultarCliente extends javax.swing.JInternalFrame {
+public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FrmConsultarCliente
+     * Creates new form FrmConsultaProveedor
      */
-    public FrmConsultarCliente() {
+    public FrmConsultarProveedor() {
         initComponents();
-        MtdListar();
     }
-
-    DefaultTableModel modelo;
-    TableRowSorter trs;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,28 +30,10 @@ public class FrmConsultarCliente extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tbConsultarCliente = new javax.swing.JTable();
         btnSeleccionar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-
-        tbConsultarCliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "DNI", "NOMBRE"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(tbConsultarCliente);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbConsultarProveedor = new javax.swing.JTable();
 
         btnSeleccionar.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         btnSeleccionar.setText("SELECCIONAR");
@@ -75,46 +51,63 @@ public class FrmConsultarCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        tbConsultarProveedor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "RUC", "RAZON SOCIAL"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tbConsultarProveedor);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSeleccionar, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnSeleccionar))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
-        int filam = tbConsultarCliente.getSelectedRow();
+        int filam = tbConsultarProveedor.getSelectedRow();
         if (filam != -1) {
-            int id = Integer.parseInt(tbConsultarCliente.getValueAt(filam, 0).toString());
-            ClsNCliente Ncli = new ClsNCliente();
-            ClsECliente cli = Ncli.MtdBuscarCliente(id);
-            FrmVenta.txtDni.setText(cli.getDni());
-            FrmVenta.txtNombreCliente.setText(cli.getNombre());
-            Principal.IdCliente2 = cli.getId_cliente();
+            int id = Integer.parseInt(tbConsultarProveedor.getValueAt(filam, 0).toString());
+            ClsNProveedor Npro = new ClsNProveedor();
+            ClsEProveedor Epro = Npro.MtdBuscarProveedor(id);
+            FrmCompra.txtRUC.setText(Epro.getRuc());
+            FrmCompra.txtRazonSocial.setText(Epro.getRazon_social());
+            Principal.IdProveedor2 = Epro.getId_proveedor();
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "SELECCIONA UNA FILA");
         }
-
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -126,24 +119,6 @@ public class FrmConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSeleccionar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbConsultarCliente;
+    private javax.swing.JTable tbConsultarProveedor;
     // End of variables declaration//GEN-END:variables
-
-    private void MtdListar() {
-        ClsNCliente objNC = new ClsNCliente();
-        String[] datos = new String[3];
-        LimpiarTabla();
-        for (ClsECliente objE : objNC.MtdListarCliente()) {
-            datos[0] = String.valueOf(objE.getId_cliente());
-            datos[1] = objE.getDni();
-            datos[2] = objE.getNombre();
-            modelo.addRow(datos);
-        }
-        this.tbConsultarCliente.setModel(modelo);
-    }
-
-    private void LimpiarTabla() {
-        modelo = (DefaultTableModel) tbConsultarCliente.getModel();
-        modelo.setRowCount(0);
-    }
 }

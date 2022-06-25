@@ -8,35 +8,21 @@ package Entidad;
  *
  * @author Usuario
  */
-public class ClsEVenta {
+public class ClsECompra {
 
-    int id_venta;
+    int id_compra;
     double total;
     String fecha_creacion;
     boolean estado;
-    int id_comprobante;
     int id_empleado;
-    int id_cliente;
+    int id_proveedor;
 
-    public ClsEVenta() {
+    public int getId_compra() {
+        return id_compra;
     }
 
-    public ClsEVenta(int id_venta, double total, String fecha_creacion, boolean estado, int id_comprobante, int id_empleado, int id_cliente) {
-        this.id_venta = id_venta;
-        this.total = total;
-        this.fecha_creacion = fecha_creacion;
-        this.estado = estado;
-        this.id_comprobante = id_comprobante;
-        this.id_empleado = id_empleado;
-        this.id_cliente = id_cliente;
-    }
-
-    public int getId_venta() {
-        return id_venta;
-    }
-
-    public void setId_venta(int id_venta) {
-        this.id_venta = id_venta;
+    public void setId_compra(int id_compra) {
+        this.id_compra = id_compra;
     }
 
     public double getTotal() {
@@ -63,14 +49,6 @@ public class ClsEVenta {
         this.estado = estado;
     }
 
-    public int getId_comprobante() {
-        return id_comprobante;
-    }
-
-    public void setId_comprobante(int id_comprobante) {
-        this.id_comprobante = id_comprobante;
-    }
-
     public int getId_empleado() {
         return id_empleado;
     }
@@ -79,12 +57,12 @@ public class ClsEVenta {
         this.id_empleado = id_empleado;
     }
 
-    public int getId_cliente() {
-        return id_cliente;
+    public int getId_proveedor() {
+        return id_proveedor;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setId_proveedor(int id_proveedor) {
+        this.id_proveedor = id_proveedor;
     }
 
 }

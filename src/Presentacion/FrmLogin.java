@@ -7,10 +7,6 @@ package Presentacion;
 import Entidad.ClsEEmpleado;
 import Negocio.ClsNEmpleado;
 
-/**
- *
- * @author Usuario
- */
 public class FrmLogin extends javax.swing.JFrame {
 
     public static String puente, puente2, puente3, idempleado;
@@ -31,9 +27,9 @@ public class FrmLogin extends javax.swing.JFrame {
         btnIngresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        txtClave = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        txtClave = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,11 +45,11 @@ public class FrmLogin extends javax.swing.JFrame {
 
         txtUsuario.setText("admin");
 
-        txtClave.setText("admin");
-
         jLabel2.setText("Usuario");
 
         jLabel3.setText("Clave");
+
+        txtClave.setText("admin");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,16 +58,18 @@ public class FrmLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(btnIngresar))
-                            .addComponent(txtClave)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))))
+                    .addComponent(txtUsuario)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(18, 18, 18)
+                            .addComponent(btnIngresar))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClave)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
@@ -104,9 +102,10 @@ public class FrmLogin extends javax.swing.JFrame {
         ClsNEmpleado objNE = new ClsNEmpleado();
         objEE.setUsuario(usuario);
         objEE.setClave(clave);
-        
+
         if (objNE.MtdLoguear(objEE)) {
-            Principal menu = new Principal(puente,puente2,puente3,idempleado);
+            Principal menu = new Principal(puente, puente2, puente3, idempleado);
+//            Principal menu = new Principal(puente, puente2, puente3, idempleado);
             menu.show();
             this.dispose();
         }
@@ -152,7 +151,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtClave;
+    private javax.swing.JPasswordField txtClave;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,6 @@ import Entidad.ClsEProducto;
 import Negocio.ClsNProducto;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -25,7 +24,6 @@ public class FrmConsultarProducto extends javax.swing.JInternalFrame {
     }
 
     DefaultTableModel modelo;
-    TableRowSorter trs;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -119,7 +117,6 @@ public class FrmConsultarProducto extends javax.swing.JInternalFrame {
             for (int i = 0; i < nfilas; i++) {
                 String cod = FrmCompra.tbCompra.getValueAt(i, 0).toString();
                 if (cod.equals(FrmCompra.txtCodigoProducto.getText())) {
-                    System.out.println(cod + " = " + FrmCompra.txtCodigoProducto.getText());
                     int tcantidad = Integer.parseInt(FrmCompra.tbCompra.getValueAt(i, 2).toString());
                     pro.setCantidad(pro.getCantidad() - tcantidad);
                     break;
@@ -128,7 +125,7 @@ public class FrmConsultarProducto extends javax.swing.JInternalFrame {
             FrmCompra.txtStock.setText(String.valueOf(pro.getCantidad()));
 
             FrmCompra.btnAgregar.setEnabled(true);
-            FrmCompra.btnQuitar.setEnabled(true);
+            FrmCompra.btnQuitarTodo.setEnabled(true);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "SELECCIONA UNA FILA");

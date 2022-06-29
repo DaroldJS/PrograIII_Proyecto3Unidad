@@ -49,6 +49,16 @@ public class Principal extends javax.swing.JFrame {
         txtBtnProveedores = new javax.swing.JLabel();
         jpCompras = new javax.swing.JPanel();
         txtBtnCompras = new javax.swing.JLabel();
+        jpReportes = new javax.swing.JPanel();
+        lblmantenimiento1 = new javax.swing.JLabel();
+        jpIngresosDiarios = new javax.swing.JPanel();
+        txtBtnIngresosDiarios = new javax.swing.JLabel();
+        jpIngresosDiarios1 = new javax.swing.JPanel();
+        txtBtnIngresosDiarios3 = new javax.swing.JLabel();
+        jpIngresosDiarios2 = new javax.swing.JPanel();
+        txtBtnIngresosDiarios4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        pnlCentro = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         dpPrincipal = new javax.swing.JDesktopPane();
 
@@ -244,6 +254,127 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(txtBtnCompras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
         );
 
+        jpReportes.setBackground(new java.awt.Color(239, 238, 244));
+
+        lblmantenimiento1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblmantenimiento1.setForeground(new java.awt.Color(128, 128, 131));
+        lblmantenimiento1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblmantenimiento1.setText("Reportes");
+
+        javax.swing.GroupLayout jpReportesLayout = new javax.swing.GroupLayout(jpReportes);
+        jpReportes.setLayout(jpReportesLayout);
+        jpReportesLayout.setHorizontalGroup(
+            jpReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblmantenimiento1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+        );
+        jpReportesLayout.setVerticalGroup(
+            jpReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpReportesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblmantenimiento1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+        );
+
+        jpIngresosDiarios.setBackground(new java.awt.Color(249, 249, 249));
+
+        txtBtnIngresosDiarios.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtBtnIngresosDiarios.setForeground(new java.awt.Color(153, 153, 153));
+        txtBtnIngresosDiarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtBtnIngresosDiarios.setText("INGRESOS DIARIOS");
+        txtBtnIngresosDiarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiariosMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiariosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiariosMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpIngresosDiariosLayout = new javax.swing.GroupLayout(jpIngresosDiarios);
+        jpIngresosDiarios.setLayout(jpIngresosDiariosLayout);
+        jpIngresosDiariosLayout.setHorizontalGroup(
+            jpIngresosDiariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jpIngresosDiariosLayout.setVerticalGroup(
+            jpIngresosDiariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        );
+
+        jpIngresosDiarios1.setBackground(new java.awt.Color(249, 249, 249));
+
+        txtBtnIngresosDiarios3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtBtnIngresosDiarios3.setForeground(new java.awt.Color(153, 153, 153));
+        txtBtnIngresosDiarios3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtBtnIngresosDiarios3.setText("INGRESOS DIARIOS");
+        txtBtnIngresosDiarios3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios3MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpIngresosDiarios1Layout = new javax.swing.GroupLayout(jpIngresosDiarios1);
+        jpIngresosDiarios1.setLayout(jpIngresosDiarios1Layout);
+        jpIngresosDiarios1Layout.setHorizontalGroup(
+            jpIngresosDiarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jpIngresosDiarios1Layout.setVerticalGroup(
+            jpIngresosDiarios1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        );
+
+        jpIngresosDiarios2.setBackground(new java.awt.Color(249, 249, 249));
+
+        txtBtnIngresosDiarios4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtBtnIngresosDiarios4.setForeground(new java.awt.Color(153, 153, 153));
+        txtBtnIngresosDiarios4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtBtnIngresosDiarios4.setText("INGRESOS DIARIOS");
+        txtBtnIngresosDiarios4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtBtnIngresosDiarios4MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpIngresosDiarios2Layout = new javax.swing.GroupLayout(jpIngresosDiarios2);
+        jpIngresosDiarios2.setLayout(jpIngresosDiarios2Layout);
+        jpIngresosDiarios2Layout.setHorizontalGroup(
+            jpIngresosDiarios2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jpIngresosDiarios2Layout.setVerticalGroup(
+            jpIngresosDiarios2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtBtnIngresosDiarios4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        );
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 20, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jpBarraLateralLayout = new javax.swing.GroupLayout(jpBarraLateral);
         jpBarraLateral.setLayout(jpBarraLateralLayout);
         jpBarraLateralLayout.setHorizontalGroup(
@@ -253,6 +384,14 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(jpEmpleados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpProveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jpCompras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpIngresosDiarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpIngresosDiarios1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpIngresosDiarios2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpBarraLateralLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         jpBarraLateralLayout.setVerticalGroup(
             jpBarraLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,27 +403,51 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jpProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jpCompras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpIngresosDiarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpIngresosDiarios1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jpIngresosDiarios2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jpSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
         );
 
-        jScrollPane1.setBorder(null);
+        pnlCentro.setBackground(new java.awt.Color(255, 255, 255));
 
-        dpPrincipal.setPreferredSize(new java.awt.Dimension(740, 535));
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(941, 635));
+
+        dpPrincipal.setPreferredSize(new java.awt.Dimension(942, 635));
 
         javax.swing.GroupLayout dpPrincipalLayout = new javax.swing.GroupLayout(dpPrincipal);
         dpPrincipal.setLayout(dpPrincipalLayout);
         dpPrincipalLayout.setHorizontalGroup(
             dpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGap(0, 950, Short.MAX_VALUE)
         );
         dpPrincipalLayout.setVerticalGroup(
             dpPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGap(0, 705, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(dpPrincipal);
+
+        javax.swing.GroupLayout pnlCentroLayout = new javax.swing.GroupLayout(pnlCentro);
+        pnlCentro.setLayout(pnlCentroLayout);
+        pnlCentroLayout.setHorizontalGroup(
+            pnlCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
+        );
+        pnlCentroLayout.setVerticalGroup(
+            pnlCentroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -294,7 +457,7 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpBarraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane1))
+                .addComponent(pnlCentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,8 +465,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jpHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpBarraLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)))
+                    .addComponent(jpBarraLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
+                    .addComponent(pnlCentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -326,6 +489,8 @@ public class Principal extends javax.swing.JFrame {
         txtBtnProveedores.setForeground(new java.awt.Color(153, 153, 153));
         jpCompras.setBackground(new java.awt.Color(249, 249, 249));
         txtBtnCompras.setForeground(new java.awt.Color(153, 153, 153));
+        jpIngresosDiarios.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnIngresosDiarios.setForeground(new java.awt.Color(153, 153, 153));
     }//GEN-LAST:event_txtBtnEmpleadosMouseClicked
 
     private void txtBtnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnProveedoresMouseClicked
@@ -338,6 +503,8 @@ public class Principal extends javax.swing.JFrame {
         txtBtnEmpleados.setForeground(new java.awt.Color(153, 153, 153));
         jpCompras.setBackground(new java.awt.Color(249, 249, 249));
         txtBtnCompras.setForeground(new java.awt.Color(153, 153, 153));
+        jpIngresosDiarios.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnIngresosDiarios.setForeground(new java.awt.Color(153, 153, 153));
     }//GEN-LAST:event_txtBtnProveedoresMouseClicked
 
     private void txtBtnComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnComprasMouseClicked
@@ -350,6 +517,8 @@ public class Principal extends javax.swing.JFrame {
         txtBtnEmpleados.setForeground(new java.awt.Color(153, 153, 153));
         jpProveedores.setBackground(new java.awt.Color(249, 249, 249));
         txtBtnProveedores.setForeground(new java.awt.Color(153, 153, 153));
+        jpIngresosDiarios.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnIngresosDiarios.setForeground(new java.awt.Color(153, 153, 153));
     }//GEN-LAST:event_txtBtnComprasMouseClicked
 
     private void txtBtnEmpleadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnEmpleadosMouseEntered
@@ -393,6 +562,58 @@ public class Principal extends javax.swing.JFrame {
             txtBtnCompras.setForeground(new Color(153, 153, 153));
         }
     }//GEN-LAST:event_txtBtnComprasMouseExited
+
+    private void txtBtnIngresosDiariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiariosMouseClicked
+        dpPrincipal.removeAll();
+        FrmReporteIngresoDiario pnlIngresoDiario = new FrmReporteIngresoDiario();
+        dpPrincipal.add(pnlIngresoDiario).setVisible(true);
+        jpIngresosDiarios.setBackground(new Color(210, 210, 210));
+
+        jpEmpleados.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnEmpleados.setForeground(new java.awt.Color(153, 153, 153));
+        jpProveedores.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnProveedores.setForeground(new java.awt.Color(153, 153, 153));
+        jpCompras.setBackground(new java.awt.Color(249, 249, 249));
+        txtBtnCompras.setForeground(new java.awt.Color(153, 153, 153));
+    }//GEN-LAST:event_txtBtnIngresosDiariosMouseClicked
+
+    private void txtBtnIngresosDiariosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiariosMouseEntered
+        if (!jpIngresosDiarios.getBackground().equals(color)) {
+            jpIngresosDiarios.setBackground(new Color(243, 243, 243));
+            txtBtnIngresosDiarios.setForeground(new Color(113, 113, 113));
+        }
+    }//GEN-LAST:event_txtBtnIngresosDiariosMouseEntered
+
+    private void txtBtnIngresosDiariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiariosMouseExited
+        if (!jpIngresosDiarios.getBackground().equals(color)) {
+            jpIngresosDiarios.setBackground(new Color(249, 249, 249));
+            txtBtnIngresosDiarios.setForeground(new Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_txtBtnIngresosDiariosMouseExited
+
+    private void txtBtnIngresosDiarios3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios3MouseClicked
+
+    private void txtBtnIngresosDiarios3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios3MouseEntered
+
+    private void txtBtnIngresosDiarios3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios3MouseExited
+
+    private void txtBtnIngresosDiarios4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios4MouseClicked
+
+    private void txtBtnIngresosDiarios4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios4MouseEntered
+
+    private void txtBtnIngresosDiarios4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBtnIngresosDiarios4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBtnIngresosDiarios4MouseExited
 
     /**
      * @param args the command line arguments
@@ -438,22 +659,32 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    protected static javax.swing.JDesktopPane dpPrincipal;
+    public static javax.swing.JDesktopPane dpPrincipal;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel jpBarraLateral;
     private javax.swing.JPanel jpCompras;
     private javax.swing.JPanel jpEmpleados;
     private javax.swing.JPanel jpHeader;
+    private javax.swing.JPanel jpIngresosDiarios;
+    private javax.swing.JPanel jpIngresosDiarios1;
+    private javax.swing.JPanel jpIngresosDiarios2;
     private javax.swing.JPanel jpMantenimiento;
     private javax.swing.JPanel jpProveedores;
+    private javax.swing.JPanel jpReportes;
     private javax.swing.JPanel jpSalir;
     private javax.swing.JLabel lblDni;
     public static javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTipo;
     private javax.swing.JLabel lblmantenimiento;
+    private javax.swing.JLabel lblmantenimiento1;
+    private javax.swing.JPanel pnlCentro;
     private javax.swing.JLabel txtBtnCompras;
     private javax.swing.JLabel txtBtnEmpleados;
+    private javax.swing.JLabel txtBtnIngresosDiarios;
+    private javax.swing.JLabel txtBtnIngresosDiarios3;
+    private javax.swing.JLabel txtBtnIngresosDiarios4;
     private javax.swing.JLabel txtBtnProveedores;
     private javax.swing.JLabel txtBtnSalir;
     // End of variables declaration//GEN-END:variables

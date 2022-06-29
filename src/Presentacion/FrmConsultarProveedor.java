@@ -7,6 +7,7 @@ package Presentacion;
 import Entidad.ClsEProveedor;
 import Negocio.ClsNProveedor;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -19,7 +20,10 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
      */
     public FrmConsultarProveedor() {
         initComponents();
+        MtdListar();
     }
+
+    DefaultTableModel modelo;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,4 +125,25 @@ public class FrmConsultarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbConsultarProveedor;
     // End of variables declaration//GEN-END:variables
+
+    private void MtdListar() {
+        ClsNProveedor objNP = new ClsNProveedor();
+        String[] datos = new String[7];
+        LimpiarTabla();
+        for (ClsEProveedor objE : objNP.MtdListarProveedor()) {
+            if (objE.isEstado()) {
+                datos[0] = String.valueOf(objE.getId_proveedor());
+                datos[1] = objE.getRuc();
+                datos[2] = objE.getRazon_social();
+                modelo.addRow(datos);
+            }
+
+        }
+        this.tbConsultarProveedor.setModel(modelo);
+    }
+
+    private void LimpiarTabla() {
+        modelo = (DefaultTableModel) tbConsultarProveedor.getModel();
+        modelo.setRowCount(0);
+    }
 }
